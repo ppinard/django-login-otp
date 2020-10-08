@@ -1,0 +1,26 @@
+{% extends "admin/change_form.html" %}
+
+{% block extrahead %}
+{{ block.super }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+{% endblock %}
+
+{% block admin_change_form_document_ready %}
+{{ block.super }}
+<script>
+  (function() {
+    var qr = new QRious({
+      element: document.getElementById('qr'),
+      value: '{{ original.otp_url }}',
+        size: 256
+    });
+  })();
+</script>
+{% endblock %}
+
+{% block after_field_sets %}
+<fieldset class="module aligned {{ fieldset.classes }}">
+    <h2>OTP code</h2>
+    <canvas id="qr"></canvas>
+</fieldset>
+{% endblock %}
