@@ -51,7 +51,7 @@ class UserAdmin(BaseUserAdmin):
     # The forms to add and change user instances
     form = UserChangeForm
     add_form = UserCreationForm
-    change_form_template = "useradmin/change_form.html"
+    change_form_template = "login_otp/change_form.html"
 
     # The fields to be used in displaying the User model.
     # These override the definitions on the base UserAdmin

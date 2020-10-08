@@ -15,7 +15,7 @@ BASEDIR = Path(__file__).parent.resolve()
 with open(BASEDIR.joinpath("README.md"), "r") as fp:
     LONG_DESCRIPTION = fp.read()
 
-PACKAGES = find_packages("login_otp")
+PACKAGES = ["login_otp", "login_otp.migrations"]
 
 with open(BASEDIR.joinpath("requirements.txt"), "r") as fp:
     INSTALL_REQUIRES = fp.read().splitlines()
