@@ -4,7 +4,7 @@
 from pathlib import Path
 
 # Third party modules.
-from setuptools import setup, find_packages
+from setuptools import setup
 
 # Local modules.
 import versioneer
@@ -16,6 +16,7 @@ with open(BASEDIR.joinpath("README.md"), "r") as fp:
     LONG_DESCRIPTION = fp.read()
 
 PACKAGES = ["login_otp", "login_otp.migrations"]
+PACKAGE_DATA = {"login_otp": "templates/login_otp/*.html"}
 
 with open(BASEDIR.joinpath("requirements.txt"), "r") as fp:
     INSTALL_REQUIRES = fp.read().splitlines()
