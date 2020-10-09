@@ -16,7 +16,7 @@ with open(BASEDIR.joinpath("README.md"), "r") as fp:
     LONG_DESCRIPTION = fp.read()
 
 PACKAGES = ["login_otp", "login_otp.migrations"]
-PACKAGE_DATA = {"login_otp": "templates/login_otp/*.html"}
+PACKAGE_DATA = {"login_otp": ["templates/login_otp/*.html"]}
 
 with open(BASEDIR.joinpath("requirements.txt"), "r") as fp:
     INSTALL_REQUIRES = fp.read().splitlines()
@@ -50,6 +50,7 @@ setup(
     long_description_content_type="text/markdown",
     license="MIT license",
     packages=PACKAGES,
+    package_data=PACKAGE_DATA,
     include_package_data=True,
     install_requires=INSTALL_REQUIRES,
     extras_require=EXTRAS_REQUIRE,
