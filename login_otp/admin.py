@@ -26,7 +26,7 @@ class UserAuthenticationForm(AuthenticationForm):
         label="One time password",
         max_length=6,
         min_length=6,
-        widget=forms.TextInput(attrs={"autocomplete", "off"}),
+        widget=forms.TextInput(attrs={"autocomplete": "off"}),
     )
 
     error_messages = {
