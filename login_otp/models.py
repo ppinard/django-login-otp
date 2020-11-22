@@ -56,6 +56,9 @@ class User(models.Model):
             self.secret = pyotp.random_base32()
         super().save(*args, **kwargs)
 
+    def set_password(self, *args):
+        pass
+
     def check_password(self, otp):
         return pyotp.TOTP(self.secret).verify(otp)
 
