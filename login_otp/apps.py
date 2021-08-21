@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class LoginOTP(AppConfig):
-    name = "login-otp"
+    name = "login_otp"
